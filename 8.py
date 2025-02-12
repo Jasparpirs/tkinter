@@ -1,44 +1,51 @@
 import tkinter as tk
 from tkinter import filedialog
 from pathlib import Path
+from PIL import Image, ImageOps
+import os
 
-def open_file():
-    documents_path = Path.home() / "Documents"
-    filename = filedialog.askopenfilename(
-        initialdir=documents_path,
-        filetypes=(
-            ("Tekstifailid", "*.txt"),
-            ("Pythoni failid", ("*.py", "*.pyx")),
-            ("Kõik failid", "*.*")
-        ),
-        title="Vali failikene"
-    )
-    if filename:
-        file_label.config(text=f"Valitud fail: {filename}")
+
+
+def open_directory():
+    directory = filedialog.askdirectory()
+    if directory:
+        dir_label.config(text=f"Valitud kaust: {directory}")
+        kausta_sisu = os.listdir(directory)
+        for fail in kausta_sisu:
+            file_name, file_extension = os.path.splitext(fail)
+            if file_extension == ".jpg" or file_extension == ".jpeg":
+                inputtxt.insert(tk.END, fail+"\n")
+        
     else:
-        file_label.config(text="Faili ei valitud.")
+        dir_label.config(text="Kausta ei valitud.")
 
-def save_directory():
+def save_images():
     pass
 
+def save_images():
+    save_directory = filedialog.askdirectory()
+    for file in selected_files:
+        img = Image.open(file)
+        img = img.resize
+
+
 aken = tk.Tk()
-aken.title("Peamine aken")
+aken.title("Pildi suuruse muutmine")
 aken.geometry("450x400")
 
-label = tk.Label(aken, text="Pildi suurus 200x200", font="Arial 24")
+label = tk.Label(aken, text="pildi suurus 200x200", font="Arial 24")
 label.pack(pady=10)
 
-inputtxt = tk.Text(aken, height=10, width=50)
+inputtxt = tk.Text(aken, height = 10, width = 50)
 inputtxt.pack(pady=10)
 
-salvesta_pildid = tk.Button(aken, text="Salvesta pildid", command=save_directory)
-salvesta_pildid.pack(pady=10, side="bottom")
+open_button = tk.Button(aken, text="Vali failid", command=open_directory)
+open_button.pack(pady=10)
 
-open_button = tk.Button(aken, text="Vali failid", command=open_file)
-open_button.pack(pady=10, side="bottom")
+save_button = tk.Button(aken, text="Salvesta pildid", command=save_images)
+save_button.pack(pady=10)
 
-file_label = tk.Label(aken, text="")
-file_label.pack(pady=10)
-
+dir_label = tk.Label(aken, text="")
+dir_label.pack(pady=10)
 
 aken.mainloop()
