@@ -1,0 +1,10 @@
+insert into trainers (full_name, job, contact) values ('Forster Pletts', 'korvpall', 'fpletts0@arizona.edu');
+insert into trainers (full_name, job, contact) values ('Hakeem Bradshaw', 'yoga', 'hbradshaw1@sciencedaily.com');
+insert into trainers (full_name, job, contact) values ('Kimberlee Sturges', 'korvpall', 'ksturges2@wikia.com');
+insert into trainers (full_name, job, contact) values ('Chet Springtorpe', 'pilaates', 'cspringtorpe3@themeforest.net');
+insert into trainers (full_name, job, contact) values ('Sherill Button', 'yoga', 'sbutton4@behance.net');
+insert into trainers (full_name, job, contact) values ('Joye de Najera', 'korvpall', 'jde5@adobe.com');
+insert into trainers (full_name, job, contact) values ('Riccardo Lemerle', 'yoga', 'rlemerle6@ameblo.jp');
+insert into trainers (full_name, job, contact) values ('Boniface Hankard', 'korvpall', 'bhankard7@apache.org');
+insert into trainers (full_name, job, contact) values ('Nessa Ullyott', 'yoga', 'nullyott8@psu.edu');
+insert into trainers (full_name, job, contact) values ('Aida Pringell', 'pilaates', 'apringell9@cam.ac.uk');
